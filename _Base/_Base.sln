@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Base", "_Base\_Base.csproj", "{E2E832F3-9DB4-485D-B7B9-B6892580AD4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzarEmpire", "Dire Macrophage\AzarEmpire.csproj", "{3FF53336-BC07-4AD5-98B5-D9767C954665}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzarEmpire", "AzarEmpire\AzarEmpire.csproj", "{3FF53336-BC07-4AD5-98B5-D9767C954665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzarEmpireDeep", "DireMacrophageDeep\AzarEmpireDeep.csproj", "{0D466657-CD25-4BA7-A9FC-E940B7A3C541}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzarEmpireDeep", "AzarEmpireDeep\AzarEmpireDeep.csproj", "{0D466657-CD25-4BA7-A9FC-E940B7A3C541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

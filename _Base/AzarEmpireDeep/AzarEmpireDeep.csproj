@@ -250,7 +250,7 @@
     <Compile Include="XMLMods\Azar Empire\AzarEmpireFactionDeepInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dire Macrophage\AzarEmpire.csproj">
+    <ProjectReference Include="..\AzarEmpire\AzarEmpire.csproj">
       <Project>{3ff53336-bc07-4ad5-98b5-d9767c954665}</Project>
       <Name>AzarEmpire</Name>
     </ProjectReference>
