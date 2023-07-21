@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--King Unit-->
+	<entity name="AzarEmpireKing" 
+            thematic_groups="Hidden,VeryMinorAliens"
+			tags="AzarEmpireKing,ShowsOnNormalDisplayMode,HackForShipType"
+			gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC3/Templar/TemplarSoveriegn/TemplarSovereign.prefab" visuals_bundle="exp3_neinzul_abyss" 
+			icon_name="Ships3/ZenithArchitraveTriari"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="22"
+			visuals_scale_multiplier="12" is_always_forced_to_planet_center="true" displaces_other_immobile_objects_as_if_were_planet_tier="true" added_displacement_buffer="1000"
+			collision_priority="810"
+			display_name="Azaran Empire Command Center"
+			display_name_for_sidebar="Command Center"
+			description="The Command Center from which units are produced, war plans are reviewed so that the Azaran Empire may expand."
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="1000000"
+			hull_points="100000000" shield_points="50000000" speed="Immobile"
+			metal_cost="605000" energy_consumption="1000000"
+			armor_mm="340" albedo="1" mass_tx="17"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			description_appender_dll="AzarEmpireFactionBaseInfo"
+			description_appender_type="Arcen.AIW2.External.AzarEmpireDescriptionAppender"
+			force_background_planet_to_disappear="true"
+			grants_minor_faction_planet_control="true"
+			seconds_to_fully_regenerate_hull="3600"
+			attrition_damage="80"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			strength_multiplier="0.01"
+			eligible_for_hacks="HackToGrantCruiser_AzarEmpire"
+			grants_stuff_to_be_added_to_player_fleets="true"
+			grants_stuff_to_be_added_to_player_fleets_frigate_options="1"
+			hacking_to_grant_on_death="50"
+			science_to_grant_on_death="5000"
+			>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="50" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				></system>
+	</entity>
+	<!--Tier 0-->
+	<entity name="AzaranSpaceman"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="WeakAzarEmpireSpawn,AzarEmpireSpawn"
+	  visuals="assets/_finalgamemeshes/fleetships/etherjettractor/etherjettractor.prefab"
+	  icon_name="Ships1/EtherJet"
+	  voice_group="Fighter"
+	  gimbal_icon_size_multiplier="0.7"
+	  size_scale="1"
+	  visuals_scale_multiplier="2"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="Azaran Spaceman"
+    display_name_for_sidebar="Spaceman"
+	  description="These ships form the frontline of the Azaran Empire. Weak but numerous, they try to swarm their ennemy with the most basic weaponry possible. Many weaknesses."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="30"
+	  hull_points="800" shield_points="0" speed="AboveAverage1"
+	  metal_cost="500" energy_consumption="50"
+	  armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.2"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Laser Shot"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="80" range="Normal1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+        </system>
+	<ship_class_data can_be_zombified_and_similar="true" />
+  </entity>
+  
+   <!--Tier 1-->
+  <entity name="AzaranTank"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="MediumAzarEmpireSpawn,AzarEmpireSpawn"
+	  visuals="assets/_finalgamemeshes/fleetships/spacetank2/spacetank2.prefab"
+	  icon_name="Ships1/SpaceTank"
+	  voice_group="MasterCombatant"
+	  size_scale="2"
+	  visuals_scale_multiplier="4.3"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="Azaran Tank"
+    display_name_for_sidebar="Azaran Tank"
+	  description="Tanks made to beachhead into ennemy territory where ordinary soldiers would be unable to make it through. Limited armament however."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="600"
+	  hull_points="36000" shield_points="0" speed="Normal1"
+	  metal_cost="3500" energy_consumption="1000"
+	  armor_mm="150" albedo="0.3" engine_gx="7" mass_tx="0.3"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Pulse Cannon"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"		
+	    >
+        </system>
+	<ship_class_data can_be_zombified_and_similar="true" />
+  </entity>
+  
+
+  <entity name="AzaranLieutenant"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="MediumAzarEmpireSpawn,AzarEmpireSpawn"
+	  visuals="Assets/_DLC1/GraySpire/GraySpireLightseeker/GraySpireLightseeker.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/GraySpireLightSeeker"
+	  voice_group="MasterCombatant"
+	  size_scale="1"
+	  visuals_scale_multiplier="0.6"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="Azaran Lieutenant"
+    display_name_for_sidebar="Azaran Lieutenant"
+	  description="A distinguished soldier now in charge of a small amount of spacemen. Boosts damage of friendly units minimally, and its main weapon blasts acid on foes, greatly increasing the common spaceman efficency."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="600"
+	  hull_points="16000" shield_points="4000" speed="Normal3"
+	  metal_cost="5000" energy_consumption="1500"
+	  armor_mm="80" albedo="0.4" engine_gx="7" mass_tx="0.3"
+	  allied_attack_multiplier="1.004"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Acidic Laser Shot"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="320" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"
+		damage_amplification="true" damage_amplification_duration="5" damage_amplification_flat="60" damage_amplification_flat_added_per_mark="20"
+	    >
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <entity name="AzaranDefenseConstructor"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="MediumAzarEmpireSpawn,AzarEmpireDefenseConstructor,SkipForConflict"
+	  visuals="Assets/_DLC2/Outguard/ShipCompactor/ShipCompactor.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/Outguard_ShipCompactor"
+	  special_entity_type="LargeShipNotStackable"
+	  gimbal_icon_size_multiplier="0.8"
+	  voice_group="MasterCombatant"
+	  size_scale="0.8"
+	  visuals_scale_multiplier="0.8"
+	  category="Ship" 
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  display_name="Azaran Defense Constructor"
+    display_name_for_sidebar="Def Constructor"
+	  description="A constructor made by the Azaran Empire to give birth to a guard post, in order to bolster defenses in the chosen system."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="600"
+	  hull_points="40000" shield_points="40000" speed="Normal1"
+	  metal_cost="10000" energy_consumption="2500"
+	  armor_mm="70" albedo="0.6" engine_gx="16" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  >
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <!--Tier 2-->
+  <entity name="AzaranMajor"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="StrongAzarEmpireSpawn,AzarEmpireSpawn"
+	  visuals="Assets/_DLC3/Venators/DemolitionVenator/DemolitionVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorDemolition"
+	  gimbal_icon_size_multiplier="1.2"
+	  voice_group="MasterCombatant"
+	  size_scale="2"
+	  visuals_scale_multiplier="0.6"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  display_name="Azaran Major"
+    display_name_for_sidebar="Azaran Major"
+	  description="A distinguished lieutenant now in charge of a small amount of lieutenants. Boosts damage of friendly units slightly, and its main weapon blasts acid on foes, greatly increasing the common spaceman efficency."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="150000" shield_points="50000" speed="Normal3"
+	  metal_cost="50000" energy_consumption="7500"
+	  armor_mm="110" albedo="0.4" engine_gx="7" mass_tx="0.3"
+	  allied_attack_multiplier="1.025"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Acidic Laser Shot"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="640" range="AboveAverage2" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"
+		damage_amplification="true" damage_amplification_duration="5" damage_amplification_flat="120" damage_amplification_flat_added_per_mark="40"
+	    >
+        </system>
+		<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="High2" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="10"/>
+  </entity>
+  
+  <entity name="AzaranGraviticAttractor"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="StrongAzarEmpireSpawn,AzarEmpireSpawn"
+	  visuals="Assets/_FinalGameMeshes/HumanBuildings/HumanFortress/Citadel.prefab"
+	    icon_name="Ships1/Fortress"
+		gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="4"
+	  visuals_scale_multiplier="6"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  display_name="Azaran Gravitic Attractor"
+    display_name_for_sidebar="Gravitic Attractor"
+	  description="Large movable structure made to intercept shots meant for other units. Greatly bolsters survivability of weaker units."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="600000" shield_points="150000" speed="Normal1"
+	  metal_cost="3500" energy_consumption="1000"
+	  armor_mm="200" albedo="0.3" engine_gx="12" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Pulse Cannon"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="6000" range="Normal4" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"	
+	    >
+        </system>
+		<system name="A" display_name="Attractant Field"
+				category="Passive"
+				attract_range_for_shots_against_allies="Small2"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="10"/>
+  </entity>
+  
+  <entity name="AzaranRocketeers"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="StrongAzarEmpireSpawn,AzarEmpireSpawn"
+	  visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+			icon_name="Ships1/AutoBomb"
+			gimbal_icon_size_multiplier="1.2"
+	  voice_group="MasterCombatant"
+	  size_scale="4"
+	  visuals_scale_multiplier="6"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  display_name="Azaran Rocketeers"
+    display_name_for_sidebar="Azaran Rocketeers"
+	  description="Elite troops that are able to make big holes in massive hulls."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="75000" shield_points="25000" speed="Normal1"
+	  metal_cost="35000" energy_consumption="10000"
+	  armor_mm="90" albedo="0.4" engine_gx="12" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Mass Rocket"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="20000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+	    shot_type_data="FusionRocket"		
+	    >
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="10"/>
+  </entity>
+  
+  <entity name="AzaranBasicConstructor"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="StrongAzarEmpireSpawn,AzarEmpireBasicConstructor,SkipForConflict"
+	  visuals="Assets/_DLC2/Outguard/ShipCompactor/ShipCompactor.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/Outguard_ShipCompactor"
+	  special_entity_type="LargeShipNotStackable"
+	  gimbal_icon_size_multiplier="1.2"
+	  voice_group="MasterCombatant"
+	  size_scale="1"
+	  visuals_scale_multiplier="1"
+	  category="Ship" 
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  display_name="Azaran Basic Constructor"
+    display_name_for_sidebar="Basic Constructor"
+	  description="A constructor made by the Azaran Empire to give birth to an unremarkable, but useful facility to bolster the might of the Empire."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="250000" shield_points="250000" speed="Normal1"
+	  metal_cost="35000" energy_consumption="10000"
+	  armor_mm="90" albedo="0.6" engine_gx="18" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  >
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <!--Tier 3-->
+  
+	<entity name="AzaranAdvancedConstructor"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="VeryStrongAzarEmpireSpawn,AzarEmpireAdvancedConstructor,ShowsOnNormalDisplayMode,SkipForConflict"
+	  visuals="Assets/_DLC2/Outguard/ShipCompactor/ShipCompactor.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/Outguard_DemetersCornucopia"
+	  special_entity_type="LargeShipNotStackable"
+	  gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="1.25"
+	  visuals_scale_multiplier="1.25"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  draw_in_galaxy_view="true"
+	  display_name="Azaran Advanced Constructor"
+    display_name_for_sidebar="AV Constructor"
+	  description="A constructor made by the Azaran Empire to give birth to a remarkable facility showcasing the full technological prowess of the Empire."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="8000"
+	  hull_points="1500000" shield_points="1500000" speed="Normal1"
+	  metal_cost="250000" energy_consumption="75000"
+	  armor_mm="190" albedo="0.6" engine_gx="22" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <entity name="AzaranColonel"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="VeryStrongAzarEmpireSpawn,AzarEmpireSpawn,ShowsOnNormalDisplayMode"
+		  visuals="Assets/_DLC3/Templar/TemplarProphet/TemplarProphet.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarProphet"
+			gimbal_icon_size_multiplier="1.4"
+	  voice_group="MasterCombatant"
+	  size_scale="4"
+	  visuals_scale_multiplier="0.6"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  draw_in_galaxy_view="true"
+	  display_name="Azaran Colonel"
+    display_name_for_sidebar="Azaran Colonel"
+	  description="A distinguished major now in charge of a small amount of majors. Boosts damage of friendly units, and its main weapon blasts acid on foes, greatly increasing the common spaceman efficency, and also creates its own platoon in battle."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="8000"
+	  hull_points="1500000" shield_points="1500000" speed="Normal3"
+	  metal_cost="500000" energy_consumption="75000"
+	  armor_mm="180" albedo="0.5" engine_gx="18" mass_tx="6"
+	  allied_attack_multiplier="1.075"
+	  build_points_per_second="500" build_point_cost_for_per_second_construction="1000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="AzaranColonel"
+			personal_ship_cap_for_per_second_build_point_construction="50"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	hacking_to_grant_on_death="2"
+	  > 
+        <system name="WD" display_name="Acidic Laser Multi Shot"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="640" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+		shots_per_salvo="12"
+	    shot_type_data="LaserPulse_DeepBlue"
+		damage_amplification="true" damage_amplification_duration="5" damage_amplification_flat="180" damage_amplification_flat_added_per_mark="60"
+	    >
+        </system>
+		<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="High2" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="10"
+            necromancer_resource_one_to_grant_on_death="1"/>
+  </entity>
+  
+  <entity name="AzaranBattleship"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="VeryStrongAzarEmpireSpawn,AzarEmpireSpawn,ShowsOnNormalDisplayMode"
+	  visuals="Assets/_DLC3/Venators/DemolitionVenator/DemolitionVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships3/Harpoon"
+		gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="12"
+	  visuals_scale_multiplier="3"
+	  category="Ship" 
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  draw_in_galaxy_view="true"
+	  display_name="Azaran Battleship"
+    display_name_for_sidebar="Azaran Battleship"
+	  description="An average ship of the line, where average means without weaknesses."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="8000"
+	  hull_points="4500000" shield_points="2250000" speed="Normal1"
+	  metal_cost="500000" energy_consumption="75000"
+	  armor_mm="400" albedo="0.7" engine_gx="20" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	hacking_to_grant_on_death="2"
+	  > 
+        <system name="WD" display_name="Pulse Cannon"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="240000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+        </system>
+		<system name="SN" display_name="Point Defense"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+		shots_per_salvo="25"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="10"
+            necromancer_resource_one_to_grant_on_death="1"/>
+  </entity>
+  
+  <!--Tier 4-->
+  
+  <entity name="AzaranOverkillMachine"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="PinnacleAzarEmpireSpawn,AzarEmpireSpawn,ShowsOnNormalDisplayMode"
+	  visuals="Assets/_DLC3/Templar/TemplarFastness/TemplarFastness.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_name="Ships4/NecromancerSkeletonLauncher"
+			gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="16"
+			visuals_scale_multiplier="24"
+			y_offset_of_ship_in_visual_space="30"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="600"
+	  draw_in_galaxy_view="true"
+	  display_name="Azaran Overkill Machine"
+    display_name_for_sidebar="Overkill Machine"
+	  description="A giant mech in space, extremely fast and tearing through hordes of ships while healing itself doing so."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="20000"
+	  hull_points="4500000" shield_points="4500000" speed="High"
+	  metal_cost="5000000" energy_consumption="100000"
+	  armor_mm="300" albedo="0.7" engine_gx="25" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	hacking_to_grant_on_death="5"
+	  > 
+        <system name="WD" display_name="Crushing Hand"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="120000" range="Small3" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+	    shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"			
+		health_change_per_damage_dealt="0.25"
+		aoe_spreads_damage_among_available_targets="true"
+		area_of_effect_size="800"
+	    >
+        </system>
+		<system name="SN" display_name="Crushing Hand"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="120000" range="Small3" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+	    shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"		
+		health_change_per_damage_dealt="0.25"
+		aoe_spreads_damage_among_available_targets="true"
+		area_of_effect_size="800"
+	    >
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"/>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="9000" multiplier="0.25" />
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="50"
+            necromancer_resource_one_to_grant_on_death="5"/>
+  </entity>
+  
+  <entity name="AzaranNovaBot"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="PinnacleAzarEmpireSpawn,AzarEmpireSpawn,ShowsOnNormalDisplayMode"
+	  visuals="Assets/_DLC3/Templar/TemplarPaladin/TemplarPaladin.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships3/ZenithArchitraveBustuarius"
+	  gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="10"
+	  visuals_scale_multiplier="2"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  draw_in_galaxy_view="true"
+	  display_name="Azaran Nova Bot"
+    display_name_for_sidebar="Azaran Nova Bot"
+	  description="A giant ship, slow but firing destructive beams in a cone while sometimes unleashing massive supernovas to deal tremendous damage."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="20000"
+	  hull_points="3000000" shield_points="6000000" speed="BelowAverage1"
+	  metal_cost="5000000" energy_consumption="100000"
+	  armor_mm="250" albedo="0.9" engine_gx="24" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	max_number_of_weapon_points="5"
+	strength_multiplier="2.5"
+	hacking_to_grant_on_death="5"
+	  > 
+        <system name="WD" display_name="Divergent Beams"
+	    category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5000" range="High1" shot_speed="Normal" rate_of_fire="High"
+			shot_type_data="HeavyBeamInvisible"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="30"
+			number_beams_to_fire="20" beam_weapon_visual_style="Laser_PurpleBright"
+			degrees_offset_per_beam="1"	
+			number_of_weapon_points_to_gain_on_firing="1" 
+	    >
+        </system>
+		<system name="SN" display_name="Supernova"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="Planetary" shot_speed="Normal" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+			shot_type_data="LightningExplosionAOEShot"
+			area_of_effect_size="999999"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="500"
+			additional_damage_modifier_per_weapon_point="1" number_of_weapon_points_to_consume_on_firing="5"
+			>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="0.1" />
+		</system>	
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"/>
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="50"
+            necromancer_resource_one_to_grant_on_death="5"/>
+  </entity>
+  
+  <entity name="AzaranGrandGeneral"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="PinnacleAzarEmpireSpawn,AzarEmpireSpawn,ShowsOnNormalDisplayMode"
+	  visuals="Assets/_DLC3/Templar/TemplarProphet/TemplarProphet.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships3/ZenithArchitraveCastra"
+		gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="12"
+	  visuals_scale_multiplier="2"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  draw_in_galaxy_view="true"
+	  display_name="Azaran Grand General"
+    display_name_for_sidebar="Grand General"
+	  description="A legend of war, with so many medals it constitutes the bulk of its armor. Greatly increases the damage of friendly units, and bolsters their damage though acid, but also creates its own company in battle."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="20000"
+	  hull_points="6000000" shield_points="6000000" speed="BelowAverage2"
+	  metal_cost="5000000" energy_consumption="75000"
+	  armor_mm="250" albedo="0.5" engine_gx="22" mass_tx="7"
+	  allied_attack_multiplier="1.15"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	build_points_per_second="3000" build_point_cost_for_per_second_construction="1000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="AzaranGrandGeneral"
+			personal_ship_cap_for_per_second_build_point_construction="125"
+			hacking_to_grant_on_death="5"
+	  > 
+        <system name="WD" display_name="Acidic Laser Multi Shot"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1280" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+		shots_per_salvo="72"
+	    shot_type_data="LaserPulse_DeepBlue"
+		damage_amplification="true" damage_amplification_duration="5" damage_amplification_flat="300" damage_amplification_flat_added_per_mark="90"
+	    >
+        </system>
+		<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"/>
+	<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="50"
+            necromancer_resource_one_to_grant_on_death="5"/>
+  </entity>
+  
+  
+	<entity name="AzaranCompanySpaceman"
+          thematic_groups="Hidden,VeryMinorAliens"
+	  visuals="assets/_finalgamemeshes/fleetships/etherjettractor/etherjettractor.prefab"
+	  icon_name="Ships1/EtherJet"
+	  icon_overlay="Overlays2/TemplarElite"
+	  voice_group="Fighter"
+	  gimbal_icon_size_multiplier="0.6"
+	  size_scale="0.6"
+	  visuals_scale_multiplier="2"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="Azaran Elite Spaceman"
+    display_name_for_sidebar="Elite Spaceman"
+	  description="These ships form the frontline of the Azaran Empire. Made by a Colonel or a Grand General, these ships bare little resemblance to their weaker variant, despite retaining the same key characteristics."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="30"
+	  tags="AzaranGrandGeneral,AzaranColonel"
+	  dies_if_parent_dies="true" 
+	  hull_points="3200" shield_points="0" speed="AboveAverage1"
+	  metal_cost="500" energy_consumption="50"
+	  armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.2"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Laser Shot"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="320" range="Normal1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+        </system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+		
+	</entity>
+  
+  <!--Buildings-->
+  <entity name="AzaranStorageFacility"
+	        thematic_groups="Hidden,VeryMinorAliens"
+	    tags="AzarEmpireBasicFacility,AzarEmpireMaxStrengthBasicFacility,SapperImportantPoint,SkipForConflict"
+		npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+		special_entity_type="LargeShipNotStackable"
+	    visuals="assets/arcenbundle/structures/ai/astrotraindepot.prefab"
+		icon_name="Ships1/AstroTrainDepot" gimbal_icon_size_multiplier="1.5"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="4" lod_distance_multiplier="3"
+	    visuals_scale_multiplier="11"
+	    y_offset_of_ship_in_visual_space="0"
+	    collision_priority="810"
+	    display_name="Azaran Storage Facility"
+			display_name_for_sidebar="Storage Facility"
+	    description="A facility dedicated to storage, increasing the maximum strength that the Azaran Empire can project in the galaxy."
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+            grants_minor_faction_planet_control="true"
+	    cost_for_ai_to_purchase="4000"
+            hull_points="150000" shield_points="300000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="90" albedo="0.6" mass_tx="6"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+            >
+    </entity>
+	
+	<entity name="AzaranProductionFacility"
+	        thematic_groups="Hidden,VeryMinorAliens"
+	    tags="AzarEmpireBasicFacility,AzarEmpireBudgetBasicFacility,SapperImportantPoint,SkipForConflict"
+		npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+		special_entity_type="LargeShipNotStackable"
+	    visuals="assets/_dlc2/cruisers/void/void.prefab"  visuals_bundle="exp2_zenith_onslaught"
+      icon_name="Ships3/Void" gimbal_icon_size_multiplier="1.5"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="4" lod_distance_multiplier="3"
+	    visuals_scale_multiplier="11"
+	    y_offset_of_ship_in_visual_space="0"
+	    collision_priority="810"
+	    display_name="Azaran Production Facility"
+			display_name_for_sidebar="Prod Facility"
+	    description="A facility dedicated to the production of parts and components or even training. Bolsters the production of the command center."
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+            grants_minor_faction_planet_control="true"
+	    cost_for_ai_to_purchase="4000"
+            hull_points="150000" shield_points="300000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="90" albedo="0.6" mass_tx="6"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+            >	
+    </entity>
+	
+	<entity name="AzaranCompressionFacility"
+	        thematic_groups="Hidden,VeryMinorAliens"
+	    tags="AzarEmpireAdvancedFacility,AzarEmpireMaxStrengthAdvancedFacility,SapperImportantPoint,SkipForConflict"
+		npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+		special_entity_type="LargeShipNotStackable"
+	    visuals="Assets/_DLC2/Outguard/CargoContainer/CargoContainer.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/CargoContainer" gimbal_icon_size_multiplier="2"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="6" lod_distance_multiplier="3"
+	    visuals_scale_multiplier="3"
+	    y_offset_of_ship_in_visual_space="0"
+	    collision_priority="810"
+	    display_name="Azaran Compression Facility"
+			display_name_for_sidebar="Compress Facility"
+	    description="In this facility lies high tech components, themselves manufacturing other high tech components which are to be sent every 5 minutes to the command center where they will be used to permanently increase its storage capacity."
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+            grants_minor_faction_planet_control="true"
+	    cost_for_ai_to_purchase="4000"
+            hull_points="600000" shield_points="1200000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="160" albedo="0.6" mass_tx="7"
+			build_points_per_second="17" build_point_cost_for_per_second_construction="1000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="AzaranCompressionFacility"
+			personal_ship_cap_for_per_second_build_point_construction="4"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+			hacking_to_grant_on_death="2"
+            >
+			<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_hacking_to_grant_on_death="5"/>
+    </entity>
+	
+	<entity name="AzaranInnovationFacility"
+	        thematic_groups="Hidden,VeryMinorAliens"
+	    tags="AzarEmpireAdvancedFacility,AzarEmpireBudgetAdvancedFacility,SapperImportantPoint,SkipForConflict,HackForShipType"
+		npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+		special_entity_type="LargeShipNotStackable"
+	    visuals="assets/_finalgamemeshes/buildings/forcefieldgenerator/forcefieldgeneratorlod0.prefab"
+			icon_name="Ships1/Shield_Generator" gimbal_icon_size_multiplier="1.5"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="8" lod_distance_multiplier="3"
+	    visuals_scale_multiplier="22"
+	    y_offset_of_ship_in_visual_space="0"
+	    collision_priority="810"
+	    display_name="Azaran Innovation Facility"
+			display_name_for_sidebar="Innov Facility"
+	    description="A research laboratory aiming to make more with less, its crew works tirelessly to send new processes and machines every 5 minutes through which the command center can produce more troops in the same amount of time."
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+            grants_minor_faction_planet_control="true"
+	    cost_for_ai_to_purchase="4000"
+            hull_points="600000" shield_points="1200000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="160" albedo="0.6" mass_tx="7"
+			build_points_per_second="17" build_point_cost_for_per_second_construction="1000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="AzaranInnovationFacility"
+			personal_ship_cap_for_per_second_build_point_construction="4"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+			eligible_for_hacks="HackToGrantShipLine_AzarEmpire"
+			grants_stuff_to_be_added_to_player_fleets="true"
+			grants_stuff_to_be_added_to_player_fleets_strikecraft_options="3"
+            >	
+			<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_hacking_to_grant_on_death="5"/>
+    </entity>
+	
+	<!-- Defenses -->
+	<entity name="AzaranForcefieldProvider"
+            thematic_groups="Hidden,VeryMinorAliens" 
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Forcefield/GuardPostForcefield.prefab" 
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Shield" gimbal_icon_size_multiplier="1"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="Azaran Forcefield Ward"
+	    display_name_for_sidebar="Forcefield Ward"
+			description="Ward produced by advanced facilities of the Azaran Empire to protect against sudden assaults on the facilities."
+			behavior="Stationary"
+			shield_size_scale="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true" my_forcefield_does_not_shrink="true"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"			
+			hull_points="9000" shield_points="200000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="85" albedo="0.4" mass_tx="5"
+			tags="AzaranCompressionFacility,AzaranInnovationFacility"
+			orbits_parent_at_range="1440" degrees_to_orbit_per_second="4"  attempts_to_reach_orbital_point_at_speed="8000"
+			dies_if_parent_dies="true" 
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="NormalGuardPost"
+			>
+    <system name="R5" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="Normal6" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="AzaranPikeGuardPost"
+            thematic_groups="Hidden,VeryMinorAliens" 
+			tags="SkipForConflict,AzarEmpireDefense"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Pike/GuardPostPike.prefab" 
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Pike" gimbal_icon_size_multiplier="1.4"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="Azaran Pike Guard Post"
+	    display_name_for_sidebar="Azar Pike GP"
+			description="Azaran defense armed with a cannon dangerous to highly armoured units. Has a weak tachyon beam to detect units on a planet, alongside a railcannon to protect its position from afar."
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"			
+			hull_points="25000" shield_points="125000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="70" albedo="0.3" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+			>
+    <system name="V1" display_name="Petard"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold" cloaking_percent_loss_from_firing="0.1"
+				>
+	  <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="6" />
+      <outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="2" />
+    </system>
+	<system name="WZ" display_name="Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+		</system>
+	<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="5" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+  </entity>
+  
+  <entity name="AzaranSabotGuardPost"
+            thematic_groups="Hidden,VeryMinorAliens" 
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Sabot/GuardPostSabot.prefab" 
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Sabot" gimbal_icon_size_multiplier="1.4"
+			tags="SkipForConflict,AzarEmpireDefense"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="Azaran Sabot Guard Post"
+	    display_name_for_sidebar="Azar Sabot GP"
+			description="Azaran defense armed with a weapon devastating to high mass targets. Has a weak tachyon beam to detect units on a planet, alongside a railcannon to protect its position from afar."
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"			
+			hull_points="25000" shield_points="125000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="80" albedo="0.4" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+			>
+    <system name="WS" display_name="Sabot"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1400" range="AboveAverage3" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot" cloaking_percent_loss_from_firing="0.1"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+    </system>
+	<system name="WZ" display_name="Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+		</system>
+	<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="5" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+  </entity>
+  
+  <entity name="AzaranConcussionGuardPost"
+            thematic_groups="Hidden,VeryMinorAliens" 
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Concussion/GuardPostConcussion.prefab" 
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Concussion" gimbal_icon_size_multiplier="1.4"
+			tags="SkipForConflict,AzarEmpireDefense"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="Azaran Concussion Guard Post"
+	    display_name_for_sidebar="Azar Concuss GP"
+			description="Azaran defense armed with missile launchers ideal against thinly armoured targets. Has a weak tachyon beam to detect units on a planet, alongside a railcannon to protect its position from afar."
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"			
+			hull_points="25000" shield_points="125000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="40" albedo="0.4" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+			>
+    <system name="Q5" display_name="Concussion Missile"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1600" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="GuidedMissile" cloaking_percent_loss_from_firing="0.1"
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="6" />
+    </system>
+	<system name="WZ" display_name="Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+		</system>
+	<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="5" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+  </entity>
+  
+  <entity name="AzaranMLRSGuardPost"
+            thematic_groups="Hidden,VeryMinorAliens" 
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/MLRS/GuardPostMLRS.prefab" 
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_MLRS" gimbal_icon_size_multiplier="1.4"
+			tags="SkipForConflict,AzarEmpireDefense"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="Azaran MLRS Guard Post"
+	    display_name_for_sidebar="Azar MLRS GP"
+			description="Azaran defense armed with multiple rocket tubes for crowd control. Has a weak tachyon beam to detect units on a planet, alongside a railcannon to protect its position from afar."
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"			
+			hull_points="25000" shield_points="125000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="50" albedo="0.3" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+			>
+    <system name="R1" display_name="Fusion Rockets"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="40" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket" cloaking_percent_loss_from_firing="0.1"
+				>
+        <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+    </system>
+	<system name="WZ" display_name="Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+		</system>
+	<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="5" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+  </entity>
+  
+  <entity name="AzaranNucleophilicGuardPost"
+            thematic_groups="Hidden,VeryMinorAliens" 
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Nucleophilic/GuardPostNucleophilic.prefab" 
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Nucleophilic" gimbal_icon_size_multiplier="1.4"
+			tags="SkipForConflict,AzarEmpireDefense"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="Azaran Nucleophilic Guard Post"
+	    display_name_for_sidebar="Azar Nucleo GP"
+			description="Azaran defense armed with a laser cannon destructive to high energy usage targets. Has a weak tachyon beam to detect units on a planet, alongside a railcannon to protect its position from afar."
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"			
+			hull_points="25000" shield_points="125000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="50" albedo="0.3" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+			>
+    <system name="R5" display_name="Electron Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel1" cloaking_percent_loss_from_firing="0.1"
+				>
+				 <outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="6" />
+    </system>
+	<system name="WZ" display_name="Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+		</system>
+	<system name="T" display_name="Tachyon Array"
+				category="Passive"
+				tachyon_points="5" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+  </entity>
+  
+  <!--Human Ships-->
+	<entity name="HackedAzaranBattleship"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="AzarEmpireHackable,AzarEmpire"
+	  visuals="Assets/_DLC3/Venators/DemolitionVenator/DemolitionVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships3/Harpoon"
+		gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="12"
+	  visuals_scale_multiplier="3"
+	  category="Ship" 
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  draw_in_galaxy_view="true"
+	  display_name="Hacked Azaran Battleship"
+    display_name_for_sidebar="Azaran Battleship"
+	  description="An average ship of the line, where average means without weaknesses. Stolen by our hackers."
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Alien"
+	  cost_for_ai_to_purchase="8000"
+	  hull_points="4500000" shield_points="2250000" speed="Normal1"
+	  metal_cost="2000000" energy_consumption="75000"
+	  armor_mm="400" albedo="0.7" engine_gx="20" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	special_entity_type="Cruiser"
+	  > 
+        <system name="WD" display_name="Pulse Cannon"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="240000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+        </system>
+		<system name="SN" display_name="Point Defense"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+		shots_per_salvo="25"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="100" cap="1" faction="AzarEmpire"/>
+  </entity>
+  
+  <entity name="HackedAzaranGraviticAttractor"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="AzarEmpireHackable,AzarEmpire"
+	  visuals="Assets/_FinalGameMeshes/HumanBuildings/HumanFortress/Citadel.prefab"
+	    icon_name="Ships1/Fortress"
+		gimbal_icon_size_multiplier="1.5"
+	  voice_group="MasterCombatant"
+	  size_scale="4"
+	  visuals_scale_multiplier="6"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  display_name="Hacked Azaran Gravitic Attractor"
+    display_name_for_sidebar="Gravitic Attractor"
+	  description="Large movable structure made to intercept shots meant for other units. Greatly bolsters survivability of weaker units. Stolen by our hackers."
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Alien"
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="600000" shield_points="150000" speed="Normal1"
+	  metal_cost="200000" energy_consumption="7500"
+	  armor_mm="200" albedo="0.3" engine_gx="12" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Pulse Cannon"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="6000" range="Normal4" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"	
+	    >
+        </system>
+		<system name="A" display_name="Attractant Field"
+				category="Passive"
+				attract_range_for_shots_against_allies="Small2"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="1" faction="AzarEmpire"/>
+  </entity>
+  
+  <entity name="HackedAzaranRocketeers"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="AzarEmpireHackable,AzarEmpire"
+	  visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+			icon_name="Ships1/AutoBomb"
+			gimbal_icon_size_multiplier="1.2"
+	  voice_group="MasterCombatant"
+	  size_scale="4"
+	  visuals_scale_multiplier="6"
+	  category="Ship"
+	  uses_large_health_bar="true"
+	  collision_priority="100"
+	  display_name="Hacked Azaran Rocketeers"
+    display_name_for_sidebar="Azaran Rocketeers"
+	  description="Elite troops that are able to make big holes in massive hulls. Stolen by our hackers."
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Alien"
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="75000" shield_points="25000" speed="Normal1"
+	  metal_cost="60000" energy_consumption="5000"
+	  armor_mm="90" albedo="0.4" engine_gx="12" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Mass Rocket"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="20000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+	    shot_type_data="FusionRocket"		
+	    >
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="3" faction="AzarEmpire"/>
+  </entity>
+  
+  <entity name="HackedAzaranTank"
+          thematic_groups="Hidden,VeryMinorAliens"
+          tags="AzarEmpireHackable,AzarEmpire"
+	  visuals="assets/_finalgamemeshes/fleetships/spacetank2/spacetank2.prefab"
+	  icon_name="Ships1/SpaceTank"
+	  voice_group="MasterCombatant"
+	  size_scale="2"
+	  visuals_scale_multiplier="4.3"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="Hacked Azaran Tank"
+    display_name_for_sidebar="Azaran Tank"
+	  description="Tanks made to beachhead into ennemy territory where ordinary soldiers would be unable to make it through. Limited armament however. Stolen by our hackers."
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Alien"
+	  cost_for_ai_to_purchase="600"
+	  hull_points="36000" shield_points="0" speed="Normal1"
+	  metal_cost="12000" energy_consumption="1000"
+	  armor_mm="150" albedo="0.3" engine_gx="7" mass_tx="0.3"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="Pulse Cannon"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_DeepBlue"		
+	    >
+        </system>
+	<ship_class_data can_be_zombified_and_similar="true" />
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="18" faction="AzarEmpire"/>
+  </entity>
+</root>

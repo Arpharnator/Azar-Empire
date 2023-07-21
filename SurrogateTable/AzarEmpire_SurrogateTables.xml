@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <surrogate_table name="AzarEmpireFactionDifficulty"
+              dll_name="AzarEmpireFactionBaseInfo"
+              type_name="Arcen.AIW2.External.AzarEmpireFactionDifficultyTable"
+  >
+  </surrogate_table>
+</root>

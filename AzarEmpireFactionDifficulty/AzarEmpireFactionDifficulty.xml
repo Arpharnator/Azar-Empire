@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<record name="Int1"
+			intensity="1"
+			
+			BudgetPerSecond_Base = 								"24"
+			BudgetPerSecond_IncreasePerHour = 					"12"
+			BudgetPerSecond_OnProductionFacility =				"6"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"0.160"
+			BudgetPerSecond_IncreasePer100AIP = 				"6"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"5000"
+			MaxStrength_IncreasePerHour = 						"2500"
+			MaxStrength_IncreasePerStorageFacility = 			"2500"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"208"
+			MaxStrength_IncreasePer100AIP = 					"1250"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int2"	
+          intensity="2"	
+			
+		  BudgetPerSecond_Base = 								"30"
+			BudgetPerSecond_IncreasePerHour = 					"16"
+			BudgetPerSecond_OnProductionFacility =				"8"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"0.160"
+			BudgetPerSecond_IncreasePer100AIP = 				"8"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"10000"
+			MaxStrength_IncreasePerHour = 						"5000"
+			MaxStrength_IncreasePerStorageFacility = 			"5000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"416"
+			MaxStrength_IncreasePer100AIP = 					"2500"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int3"	
+          intensity="3"	
+			
+		  BudgetPerSecond_Base = 								"36"
+			BudgetPerSecond_IncreasePerHour = 					"20"
+			BudgetPerSecond_OnProductionFacility =				"12"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"0.330"
+			BudgetPerSecond_IncreasePer100AIP = 				"10"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"12500"
+			MaxStrength_IncreasePerHour = 						"6500"
+			MaxStrength_IncreasePerStorageFacility = 			"6500"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"541"
+			MaxStrength_IncreasePer100AIP = 					"3250"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int4"	
+          intensity="4"	
+			
+		  BudgetPerSecond_Base = 								"44"
+			BudgetPerSecond_IncreasePerHour = 					"24"
+			BudgetPerSecond_OnProductionFacility =				"16"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"0.500"
+			BudgetPerSecond_IncreasePer100AIP = 				"12"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"18000"
+			MaxStrength_IncreasePerHour = 						"9000"
+			MaxStrength_IncreasePerStorageFacility = 			"8000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"1333"
+			MaxStrength_IncreasePer100AIP = 					"4500"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int5"	
+          intensity="5"	
+			
+		  BudgetPerSecond_Base = 								"52"
+			BudgetPerSecond_IncreasePerHour = 					"28"
+			BudgetPerSecond_OnProductionFacility =				"20"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"0.830"
+			BudgetPerSecond_IncreasePer100AIP = 				"14"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"25000"
+			MaxStrength_IncreasePerHour = 						"12500"
+			MaxStrength_IncreasePerStorageFacility = 			"10000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"1666"
+			MaxStrength_IncreasePer100AIP = 					"6250"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int6"	
+          intensity="6"	
+			
+		  BudgetPerSecond_Base = 								"64"
+			BudgetPerSecond_IncreasePerHour = 					"32"
+			BudgetPerSecond_OnProductionFacility =				"24"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"1"
+			BudgetPerSecond_IncreasePer100AIP = 				"14"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"35000"
+			MaxStrength_IncreasePerHour = 						"17500"
+			MaxStrength_IncreasePerStorageFacility = 			"12000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"2000"
+			MaxStrength_IncreasePer100AIP = 					"8750"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int7"	
+          intensity="7"	
+			
+		  BudgetPerSecond_Base = 								"76"
+			BudgetPerSecond_IncreasePerHour = 					"36"
+			BudgetPerSecond_OnProductionFacility =				"38"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"1.16"
+			BudgetPerSecond_IncreasePer100AIP = 				"18"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"45000"
+			MaxStrength_IncreasePerHour = 						"22500"
+			MaxStrength_IncreasePerStorageFacility = 			"14000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"2333"
+			MaxStrength_IncreasePer100AIP = 					"11250"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int8"	
+          intensity="8"	
+			
+		  BudgetPerSecond_Base = 								"92"
+			BudgetPerSecond_IncreasePerHour = 					"44"
+			BudgetPerSecond_OnProductionFacility =				"32"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"1.330"
+			BudgetPerSecond_IncreasePer100AIP = 				"22"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"55000"
+			MaxStrength_IncreasePerHour = 						"27500"
+			MaxStrength_IncreasePerStorageFacility = 			"16000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"2666"
+			MaxStrength_IncreasePer100AIP = 					"13250"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int9"	
+          intensity="9"	
+			
+		  BudgetPerSecond_Base = 								"108"
+			BudgetPerSecond_IncreasePerHour = 					"52"
+			BudgetPerSecond_OnProductionFacility =				"36"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"1.500"
+			BudgetPerSecond_IncreasePer100AIP = 				"26"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"65000"
+			MaxStrength_IncreasePerHour = 						"32500"
+			MaxStrength_IncreasePerStorageFacility = 			"18000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"3000"
+			MaxStrength_IncreasePer100AIP = 					"16250"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >	
+  </record>	
+  <record name="Int10"	
+          intensity="10"	
+			
+		  BudgetPerSecond_Base = 								"128"
+			BudgetPerSecond_IncreasePerHour = 					"64"
+			BudgetPerSecond_OnProductionFacility =				"40"
+	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"1.660"
+			BudgetPerSecond_IncreasePer100AIP = 				"32"
+			BudgetPerSecond_MultiplierPerHack = 				"2"
+	
+			MaxStrength_Base = 									"80000"
+			MaxStrength_IncreasePerHour = 						"40000"
+			MaxStrength_IncreasePerStorageFacility = 			"20000"
+		MaxStrength_IncreasePermanentPerCompressionFacility = 	"3333"
+			MaxStrength_IncreasePer100AIP = 					"20000"
+			MaxStrength_MultiplierPerHack = 					"2"
+	
+			BudgetMultiplierWhenBelow10PercentCapacity = 		"5"
+          >
+  </record>
+
+</root>
