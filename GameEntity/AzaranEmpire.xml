@@ -774,6 +774,7 @@
 			eligible_for_hacks="HackToGrantShipLine_AzarEmpire"
 			grants_stuff_to_be_added_to_player_fleets="true"
 			grants_stuff_to_be_added_to_player_fleets_strikecraft_options="3"
+			grants_stuff_to_be_added_to_player_fleets_required_tag="AzarEmpireHackable"
             >	
 			<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
             necromancer_hacking_to_grant_on_death="5"/>
@@ -1054,7 +1055,7 @@
   <!--Human Ships-->
 	<entity name="HackedAzaranBattleship"
           thematic_groups="Hidden,VeryMinorAliens"
-          tags="AzarEmpireHackable,AzarEmpire"
+          tags="AzarEmpireHackableBattleship,AzarEmpire"
 	  visuals="Assets/_DLC3/Venators/DemolitionVenator/DemolitionVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
 		icon_name="Ships3/Harpoon"
 		gimbal_icon_size_multiplier="1.5"
@@ -1152,7 +1153,7 @@
 	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Alien"
 	  cost_for_ai_to_purchase="3000"
 	  hull_points="75000" shield_points="25000" speed="Normal1"
-	  metal_cost="60000" energy_consumption="5000"
+	  metal_cost="100000" energy_consumption="5000"
 	  armor_mm="90" albedo="0.4" engine_gx="12" mass_tx="5"
 	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
 	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
@@ -1166,7 +1167,7 @@
 		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
         </system>
 	<ship_class_data can_be_zombified_and_similar="false" />
-	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="3" faction="AzarEmpire"/>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="AzarEmpire"/>
   </entity>
   
   <entity name="HackedAzaranTank"
@@ -1198,6 +1199,6 @@
 	    >
         </system>
 	<ship_class_data can_be_zombified_and_similar="true" />
-	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="18" faction="AzarEmpire"/>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="12" faction="AzarEmpire"/>
   </entity>
 </root>

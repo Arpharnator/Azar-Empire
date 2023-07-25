@@ -327,75 +327,92 @@ namespace Arcen.AIW2.External
                 {
                     workingAllowedSpawnPlanets.Clear();
                     int preferredHomeworldDistance = 10;
-                    do
+                    if (this.BaseInfo.SeedNearPlayer && World_AIW2.Instance.PlayerOwnedPlanets != 0)
                     {
-                        //debugCode = 600;
                         World_AIW2.Instance.DoForPlanetsSingleThread(false, delegate (Planet planet)
                         {
-                            //debugCode = 700;
-                            if (this.BaseInfo.SeedNearPlayer && planet.GetControllingFactionType() == FactionType.Player)
-                            {
-                                workingAllowedSpawnPlanets.Add(planet);
-                                return DelReturn.Continue;
-                            }
-                            if (planet.GetControllingFactionType() == FactionType.Player)
-                                return DelReturn.Continue;
-                            if (planet.GetFactionWithSpecialInfluenceHere().Type != FactionType.NaturalObject && preferredHomeworldDistance >= 6) //don't seed over a minor faction if we are finding good spots
-                            {
-                                return DelReturn.Continue;
-                            }
-                            if (planet.IsPlanetToBeDestroyed || planet.HasPlanetBeenDestroyed)
-                                return DelReturn.Continue;
-                            if (planet.PopulationType == PlanetPopulationType.AIBastionWorld ||
-                                    planet.IsZenithArchitraveTerritory)
-                            {
-                                return DelReturn.Continue;
-                            }
-                            //debugCode = 800;
-                            if (planet.OriginalHopsToAIHomeworld >= preferredHomeworldDistance &&
-                                    (planet.OriginalHopsToHumanHomeworld == -1 ||
-                                    planet.OriginalHopsToHumanHomeworld >= preferredHomeworldDistance))
-                                workingAllowedSpawnPlanets.Add(planet);
-
+                                if (planet.GetControllingFactionType() == FactionType.Player)
+                                {
+                                    workingAllowedSpawnPlanets.Add(planet);
+                                    return DelReturn.Continue;
+                                }
+                            
                             return DelReturn.Continue;
                         });
+                    }
+                    else if (!this.BaseInfo.SeedNearPlayer)
+                    {
+                        do
+                        {
+                            //debugCode = 600;
+                            World_AIW2.Instance.DoForPlanetsSingleThread(false, delegate (Planet planet)
+                            {
+                                    if (planet.GetControllingFactionType() == FactionType.Player)
+                                        return DelReturn.Continue;
+                                    if (planet.GetFactionWithSpecialInfluenceHere().Type != FactionType.NaturalObject && preferredHomeworldDistance >= 6) //don't seed over a minor faction if we are finding good spots
+                                    {
+                                        return DelReturn.Continue;
+                                    }
+                                    if (planet.IsPlanetToBeDestroyed || planet.HasPlanetBeenDestroyed)
+                                        return DelReturn.Continue;
+                                    if (planet.PopulationType == PlanetPopulationType.AIBastionWorld ||
+                                            planet.IsZenithArchitraveTerritory)
+                                    {
+                                        return DelReturn.Continue;
+                                    }
+                                    //debugCode = 800;
+                                    if (planet.OriginalHopsToAIHomeworld >= preferredHomeworldDistance &&
+                                            (planet.OriginalHopsToHumanHomeworld == -1 ||
+                                            planet.OriginalHopsToHumanHomeworld >= preferredHomeworldDistance))
+                                        workingAllowedSpawnPlanets.Add(planet);
+                                return DelReturn.Continue;
+                            });
 
-                        preferredHomeworldDistance--;
-                        if (preferredHomeworldDistance == 0)
-                            break;
-                    } while (workingAllowedSpawnPlanets.Count == 0);
+                            preferredHomeworldDistance--;
+                            //No need to go past the first loop if we are to seed near the player
+                            if (preferredHomeworldDistance == 0)
+                                break;
+                        } while (workingAllowedSpawnPlanets.Count < 6);
+                    }
+                    
                     //debugCode = 900;
-                    if (workingAllowedSpawnPlanets.Count == 0)
-                        throw new Exception("Unable to find a place to spawn the Azaran Empire");
+                    //if (workingAllowedSpawnPlanets.Count == 0)
+                    //    throw new Exception("Unable to find a place to spawn the Azaran Empire");
 
-                    // This is not actually random unless we set the seed ourselves.
-                    // Since other processing happening before us tends to set the seed to the same value repeatedly.
-                    Context.RandomToUse.ReinitializeWithSeed(Engine_Universal.PermanentQualityRandom.Next() + AttachedFaction.FactionIndex);
-                    spawnPlanet = workingAllowedSpawnPlanets[Context.RandomToUse.Next(0, workingAllowedSpawnPlanets.Count)];
+                    if (workingAllowedSpawnPlanets.Count != 0)
+                    {
+                        // This is not actually random unless we set the seed ourselves.
+                        // Since other processing happening before us tends to set the seed to the same value repeatedly.
+                        Context.RandomToUse.ReinitializeWithSeed(Engine_Universal.PermanentQualityRandom.Next() + AttachedFaction.FactionIndex);
+                        spawnPlanet = workingAllowedSpawnPlanets[Context.RandomToUse.Next(0, workingAllowedSpawnPlanets.Count)];
 
-                    // always instead of spawning on this planet, create a new planet linked to it
-                    spawnPlanet = CreateSpawnPlanet(Context, spawnPlanet);
+                        // always instead of spawning on this planet, create a new planet linked to it
+                        spawnPlanet = CreateSpawnPlanet(Context, spawnPlanet);
+                        PlanetFaction pFaction = spawnPlanet.GetPlanetFactionForFaction(AttachedFaction);
+                        ArcenPoint spawnLocation = spawnPlanet.GetSafePlacementPointAroundPlanetCenter(Context, entityData, FInt.FromParts(0, 200), FInt.FromParts(0, 600));
+
+                        var azarKing = GameEntity_Squad.CreateNew_ReturnNullIfMPClient(pFaction, entityData, entityData.MarkFor(pFaction),
+                                                    pFaction.FleetUsedAtPlanet, 0, spawnLocation, Context, "AzarEmpireKing");
+                        AttachedFaction.HasDoneInvasionStyleAction = true;
+
+                        SquadViewChatHandlerBase chatHandlerOrNull = ChatClickHandler.CreateNewAs<SquadViewChatHandlerBase>("ShipGeneralFocus");
+                        if (chatHandlerOrNull != null)
+                            chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create(azarKing);
+
+                        string planetStr = "";
+                        if (spawnPlanet.GetDoHumansHaveVision())
+                        {
+                            planetStr = " from " + spawnPlanet.Name;
+                        }
+
+                        var str = string.Format("<color=#{0}>{1}</color> are invading{2}!", AttachedFaction.FactionCenterColor.ColorHexBrighter, AttachedFaction.GetDisplayName(), planetStr);
+                        World_AIW2.Instance.QueueChatMessageOrCommand(str, ChatType.LogToCentralChat, chatHandlerOrNull);
+                    }
+
+                        
                 }
 
-                PlanetFaction pFaction = spawnPlanet.GetPlanetFactionForFaction(AttachedFaction);
-                ArcenPoint spawnLocation = spawnPlanet.GetSafePlacementPointAroundPlanetCenter(Context, entityData, FInt.FromParts(0, 200), FInt.FromParts(0, 600));
-
-                var azarKing = GameEntity_Squad.CreateNew_ReturnNullIfMPClient(pFaction, entityData, entityData.MarkFor(pFaction),
-                                            pFaction.FleetUsedAtPlanet, 0, spawnLocation, Context, "AzarEmpireKing");
-                AttachedFaction.HasDoneInvasionStyleAction = true;
-
-                SquadViewChatHandlerBase chatHandlerOrNull = ChatClickHandler.CreateNewAs<SquadViewChatHandlerBase>("ShipGeneralFocus");
-                if (chatHandlerOrNull != null)
-                    chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create(azarKing);
-
-                string planetStr = "";
-                if (spawnPlanet.GetDoHumansHaveVision())
-                {
-                    planetStr = " from " + spawnPlanet.Name;
-                }
-
-                var str = string.Format("<color=#{0}>{1}</color> are invading{2}!", AttachedFaction.FactionCenterColor.ColorHexBrighter, AttachedFaction.GetDisplayName(), planetStr);
-                World_AIW2.Instance.QueueChatMessageOrCommand(str, ChatType.LogToCentralChat, chatHandlerOrNull);
+                
             }
 
             if ( BaseInfo.Sphere.Display != null )
