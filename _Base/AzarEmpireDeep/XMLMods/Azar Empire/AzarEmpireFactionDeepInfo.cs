@@ -372,7 +372,7 @@ namespace Arcen.AIW2.External
                             //No need to go past the first loop if we are to seed near the player
                             if (preferredHomeworldDistance == 0)
                                 break;
-                        } while (workingAllowedSpawnPlanets.Count < 6);
+                        } while (workingAllowedSpawnPlanets.Count < 24);
                     }
                     
                     //debugCode = 900;
@@ -384,7 +384,7 @@ namespace Arcen.AIW2.External
                         // This is not actually random unless we set the seed ourselves.
                         // Since other processing happening before us tends to set the seed to the same value repeatedly.
                         Context.RandomToUse.ReinitializeWithSeed(Engine_Universal.PermanentQualityRandom.Next() + AttachedFaction.FactionIndex);
-                        spawnPlanet = workingAllowedSpawnPlanets[Context.RandomToUse.Next(0, workingAllowedSpawnPlanets.Count)];
+                        spawnPlanet = workingAllowedSpawnPlanets[Context.RandomToUse.Next(workingAllowedSpawnPlanets.Count)];
 
                         // always instead of spawning on this planet, create a new planet linked to it
                         spawnPlanet = CreateSpawnPlanet(Context, spawnPlanet);
@@ -792,7 +792,7 @@ namespace Arcen.AIW2.External
                     }
                     if (entity.Planet != BaseInfo.Sphere.Construction.Planet)
                     {
-                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30)) || DefensesAmount > 200)
+                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30)) || DefensesAmount > 30)
                         {
                             data.UnitToBuild = null;
                             data.PlanetIdx = -1;
@@ -804,7 +804,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {//Note that that this allows 1 more than the formula on the if says, likely because of decials from comparing FINT
-                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 16))
+                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 16) || DefensesAmount > 100)
                         {
                             data.UnitToBuild = null;
                             data.PlanetIdx = -1;
@@ -911,7 +911,7 @@ namespace Arcen.AIW2.External
                     }
                     if (entity.Planet != BaseInfo.Sphere.Construction.Planet)
                     {
-                        if (basicFacilitiesAmount >= BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 50) || basicFacilitiesAmount > 120)
+                        if (basicFacilitiesAmount >= BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 50) || basicFacilitiesAmount > 20)
                         {
                             data.UnitToBuild = null;
                             data.PlanetIdx = -1;
@@ -923,7 +923,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {//Note that that this allows 1 more than the formula on the if says, likely because of decials from comparing FINT
-                        if (basicFacilitiesAmount >= (BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 10))
+                        if (basicFacilitiesAmount >= (BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 10) || basicFacilitiesAmount > 60)
                         {
                             data.UnitToBuild = null;
                             data.PlanetIdx = -1;
@@ -1017,7 +1017,7 @@ namespace Arcen.AIW2.External
                     }
                     if (entity.Planet != BaseInfo.Sphere.Construction.Planet)
                     {
-                        if (advancedFacilitiesAmount >= BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 100) || advancedFacilitiesAmount > 60)
+                        if (advancedFacilitiesAmount >= BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 100) || advancedFacilitiesAmount > 10)
                         {
                             data.UnitToBuild = null;
                             data.PlanetIdx = -1;
@@ -1029,7 +1029,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {//Note that that this allows 1 more than the formula on the if says, likely because of decials from comparing FINT
-                        if (advancedFacilitiesAmount >= (BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30) + 4))
+                        if (advancedFacilitiesAmount >= (BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30) + 4) || advancedFacilitiesAmount > 30)
                         {
                             //ArcenDebugging.ArcenDebugLogSingleLine("Facility amount fail", Verbosity.ShowAsError);
                             //if (tracing && verboseDebug)
@@ -1169,7 +1169,7 @@ namespace Arcen.AIW2.External
                     }
                     if (planet.Index != BaseInfo.Sphere.Construction.Planet.Index)
                     {
-                        if (basicFacilitiesAmount >= BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 50) || basicFacilitiesAmount > 120)
+                        if (basicFacilitiesAmount >= BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 50) || basicFacilitiesAmount > 20)
                         {
                             //ArcenDebugging.ArcenDebugLogSingleLine("Facility amount fail", Verbosity.ShowAsError);
                             if (tracing && verboseDebug)
@@ -1179,7 +1179,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {//Note that that this allows 1 more than the formula on the if says, likely because of decials from comparing FINT
-                        if (basicFacilitiesAmount >= (BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 10))
+                        if (basicFacilitiesAmount >= (BaseInfo.BaseMaximumBasicFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 10) || basicFacilitiesAmount > 60)
                         {
                             //ArcenDebugging.ArcenDebugLogSingleLine("Facility amount fail", Verbosity.ShowAsError);
                             if (tracing && verboseDebug)
@@ -1258,7 +1258,7 @@ namespace Arcen.AIW2.External
                     }
                     if (planet.Index != BaseInfo.Sphere.Construction.Planet.Index)
                     {
-                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30)) || DefensesAmount > 200)
+                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30)) || DefensesAmount > 30)
                         {
                             if (tracing && verboseDebug)
                                 tracingBuffer.Add("\t\tNo, too many defenses already").Add("\n");
@@ -1267,7 +1267,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {//Note that that this allows 1 more than the formula on the if says, likely because of decials from comparing FINT
-                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 16))
+                        if (DefensesAmount >= (BaseInfo.BaseMaximumDefenses + (BaseInfo.permanentBudgetFromAdvancedFacilities / 15) + 16) || DefensesAmount > 100)
                         {
                             if (tracing && verboseDebug)
                                 tracingBuffer.Add("\t\tNo, too many defenses already").Add("\n");
@@ -1335,7 +1335,7 @@ namespace Arcen.AIW2.External
                     }
                     if (planet.Index != BaseInfo.Sphere.Construction.Planet.Index)
                     {
-                        if (advancedFacilitiesAmount >= BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 100) || advancedFacilitiesAmount > 60)
+                        if (advancedFacilitiesAmount >= BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 100) || advancedFacilitiesAmount > 10)
                         {
                             if (tracing && verboseDebug)
                                 tracingBuffer.Add("\t\tNo, too many advanced facilities already").Add("\n");
@@ -1344,7 +1344,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {//Note that that this allows 1 more than the formula on the if says, likely because of decials from comparing FINT
-                        if (advancedFacilitiesAmount >= (BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30) + 4))
+                        if (advancedFacilitiesAmount >= (BaseInfo.BaseMaximumAdvancedFacilitiesPerPlanet + (BaseInfo.permanentBudgetFromAdvancedFacilities / 30) + 4) || advancedFacilitiesAmount > 30)
                         {
                             //ArcenDebugging.ArcenDebugLogSingleLine("Facility amount fail", Verbosity.ShowAsError);
                             //if (tracing && verboseDebug)

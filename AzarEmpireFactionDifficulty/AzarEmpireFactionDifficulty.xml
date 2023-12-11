@@ -183,7 +183,7 @@
   <record name="Int10"	
           intensity="10"	
 			
-		  BudgetPerSecond_Base = 								"128"
+			BudgetPerSecond_Base = 								"128"
 			BudgetPerSecond_IncreasePerHour = 					"64"
 			BudgetPerSecond_OnProductionFacility =				"40"
 	BudgetPerSecond_IncreasePermanentPerInnovationFacility = 	"1.660"

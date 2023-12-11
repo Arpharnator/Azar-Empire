@@ -1,3 +1,8 @@
 No tech support provided from Arcen Games on mods.
 
 Introduces the Azaran Empire as a new faction.
+
+The galaxy is being invaded by the Azaran Empire. They are a highly centralized empire bringing their own planet into the galaxy from which they will produce ships to take over planets and build structures to bolster their production.
+Face off against them in order to gain rewards and hack their facilities to gain new ships to use either against them or the AI.
+Or fail and watch them take over the galaxy.
+Includes rewards for Necromancer, alongside some rewards for Humans to keep on fighting.

@@ -30,7 +30,7 @@ namespace Arcen.AIW2.External
 
         public const byte MaxUnitTier = 5;
         #endregion
-
+        
         #region Serialized
         private readonly List<FInt> BudgetByTier = List<FInt>.Create_WillNeverBeGCed( 5, "AzarEmpireFactionBaseInfo-BudgetByTier", 1 );
         public FInt BudgetForConstructorsWhenCapped;
@@ -512,33 +512,6 @@ namespace Arcen.AIW2.External
                 if ( !PlanetsWithUnits.ConstructionContains( entity.Planet ) )
                 {
                     PlanetsWithUnits.AddToConstructionList( entity.Planet );
-
-                    #region Near Player Check
-                    /*
-                    if ( !PlayerIsNear )
-                        entity.Planet.DoForLinkedNeighborsAndSelf( false, adjPlanet =>
-                        {
-                            World_AIW2.Instance.DoForFactions( workingFaction =>
-                            {
-                                if ( workingFaction.Type != FactionType.Player )
-                                    return DelReturn.Continue;
-
-                                if ( adjPlanet.GetPlanetFactionForFaction( workingFaction ).DataByStance[FactionStance.Self].TotalStrength >= 1000 )
-                                {
-                                    PlayerIsNear = true;
-                                    return DelReturn.Break;
-                                }
-
-                                return DelReturn.Continue;
-                            } );
-
-                            if ( PlayerIsNear )
-                                return DelReturn.Break;
-
-                            return DelReturn.Continue;
-                        } );
-                    */
-                    #endregion
                 }
 
                 return DelReturn.Continue;
