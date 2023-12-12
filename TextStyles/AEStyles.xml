@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<style  name="GreenTextNoNewline"
+        color="#1cf290"
+        size="80%"
+        line_height="80%"
+    />
+			
+			
+	<style  name="Newline_NoLabel_Lead"
+		copy_from="SecondaryText"
+		size="83%"
+		line_height="83%"
+		leading="\n "
+	/>
+</root>

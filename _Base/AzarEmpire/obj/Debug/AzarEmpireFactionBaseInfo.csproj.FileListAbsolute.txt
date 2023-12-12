@@ -77,3 +77,6 @@ D:\Users\Clement\Desktop\Standing outlier\Games\Main\AI War 2\Github\AzaranEmpir
 D:\Users\Clement\Desktop\Standing outlier\Games\Main\AI War 2\Github\AzaranEmpire\_Base\AzarEmpire\obj\Debug\AzarEmpireFactionBaseInfo.csproj.CoreCompileInputs.cache
 D:\Users\Clement\Desktop\Standing outlier\Games\Main\AI War 2\Github\AzaranEmpire\_Base\AzarEmpire\obj\Debug\AzarEmpireFactionBaseInfo.dll
 E:\SteamLibrary\steamapps\common\AI War 2\XmlMods\AzaranEmpire\ModdableLogicDLLs\AzarEmpireFactionBaseInfo.dll
+D:\Users\Clement\Desktop\Standing_outlier\Games\Main\AI_War_2\Github\AzaranEmpire\_Base\AzarEmpire\obj\Debug\AzarEmpireFactionBaseInfo.csprojAssemblyReference.cache
+D:\Users\Clement\Desktop\Standing_outlier\Games\Main\AI_War_2\Github\AzaranEmpire\_Base\AzarEmpire\obj\Debug\AzarEmpireFactionBaseInfo.csproj.CoreCompileInputs.cache
+D:\Users\Clement\Desktop\Standing_outlier\Games\Main\AI_War_2\Github\AzaranEmpire\_Base\AzarEmpire\obj\Debug\AzarEmpireFactionBaseInfo.dll

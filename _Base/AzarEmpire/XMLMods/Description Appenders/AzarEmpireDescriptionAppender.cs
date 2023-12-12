@@ -15,25 +15,38 @@ namespace Arcen.AIW2.External
             if ( baseInfo == null )
                 return;
 
-            int perc = ((baseInfo.Strength.Display * 100) / baseInfo.GetMaxStrength).GetNearestIntPreferringHigher() ;
-            Buffer.Add( $"This Command Center is currently supporting " + baseInfo.Strength.Display / 1000 + " / " + baseInfo.GetMaxStrength / 1000 + " maximum strength, with " + baseInfo.maxStrengthFromBasicFacilities / 1000 + " max strength from basic facilities and " + baseInfo.permanentMaxStrengthFromAdvancedFacilities / 1000 + " from permanent advancements \n");
-            Buffer.Add( $"This Command Center's budget is " + baseInfo.GetPerSecondBudget + ", with " + baseInfo.budgetFromBasicFacilities + " from basic facilities and " + baseInfo.permanentBudgetFromAdvancedFacilities + " from permanent advancements.");
+            FInt BaselineMaxStrength = baseInfo.Difficulty.MaxStrength_Base +
+                (baseInfo.Difficulty.MaxStrength_IncreasePer100AIP * (FactionUtilityMethods.Instance.GetCurrentAIP() / 100)) +
+                (baseInfo.Difficulty.MaxStrength_IncreasePerHour * (World_AIW2.Instance.GameSecond / 3600));
 
-            if ( baseInfo.BudgetMultiplierFromHacks > FInt.One || baseInfo.MaxStrengthMultiplierFromHacks > FInt.One ) {
-                Buffer.Add("This Command Center's ");
-                bool wroteAboutProduction = false;
-                if ( baseInfo.BudgetMultiplierFromHacks > FInt.One ) {
-                    Buffer.Add("production is <color=#a1ffa1>").Add( baseInfo.BudgetMultiplierFromHacks ).Add("x</color> normal");
-                    wroteAboutProduction = true;
-                }
-                if ( baseInfo.MaxStrengthMultiplierFromHacks > FInt.One ) {
-                    if (wroteAboutProduction) {
-                        Buffer.Add( " and ");
-                    }
-                    Buffer.Add( "maximum strength is <color=#a1ffa1>").Add( baseInfo.MaxStrengthMultiplierFromHacks ).Add("x</color> normal");
-                }
-                Buffer.Add(". ");
-            }
+            FInt BaselineMaxBudget = baseInfo.Difficulty.BudgetPerSecond_Base +
+            (baseInfo.Difficulty.BudgetPerSecond_IncreasePer100AIP * (FactionUtilityMethods.Instance.GetCurrentAIP() / 100)) +
+            (baseInfo.Difficulty.BudgetPerSecond_IncreasePerHour * (World_AIW2.Instance.GameSecond / 3600));
+
+            Buffer.BeginStatement(TextStyle.Get("Newline"));
+            Buffer.Add($"Strength Capacity Status :", TextStyle.Attr_Label);
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).AddStrength_MoreReadable(baseInfo.Strength.Display, true).Add(" / ").AddStrength_MoreReadable(baseInfo.GetMaxStrength, true).Add(".").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.EndStatement(TextStyle.Get("Newline"));
+
+
+            Buffer.BeginStatement(TextStyle.Get("Newline"));
+            Buffer.Add($"Maximum Strength breakdown :", TextStyle.Attr_Label);
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).AddStrength_MoreReadable(baseInfo.maxStrengthFromBasicFacilities, true).Add(" from Basic Facilities.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).AddStrength_MoreReadable(baseInfo.permanentMaxStrengthFromAdvancedFacilities, true).Add(" from Permanent Advancements.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).AddStrength_MoreReadable(BaselineMaxStrength, true).Add(" Baseline.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).AddStrength_MoreReadable(baseInfo.GetMaxStrength, true).Add(" Total Maximum Strength.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.EndStatement(TextStyle.Get("Newline"));
+
+            //Buffer.Add("\n\n");
+            Buffer.BeginStatement(TextStyle.Get("Newline"));
+            Buffer.Add($"Budget Income breakdown :", TextStyle.Attr_Label);
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).Add(baseInfo.budgetFromBasicFacilities, TextStyle.Get("GreenTextNoNewline")).Add(" from Basic Facilities.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).Add(baseInfo.permanentBudgetFromAdvancedFacilities, TextStyle.Get("GreenTextNoNewline")).Add(" from Permanent Advancements.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).Add(BaselineMaxBudget, TextStyle.Get("GreenTextNoNewline")).Add(" Baseline.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.Open(TextStyle.Get("Newline_NoLabel_Lead")).Add(baseInfo.GetPerSecondBudget, TextStyle.Get("GreenTextNoNewline")).Add(" Total Budget.").Close(TextStyle.Get("Newline_NoLabel_Lead"));
+            Buffer.EndStatement(TextStyle.Get("Newline"));
         }
+        //AddStrength_MoreReadable(baseInfo.Strength.Display / 1000, true)
+        //baseInfo.GetMaxStrength / 1000 
     }
 }
