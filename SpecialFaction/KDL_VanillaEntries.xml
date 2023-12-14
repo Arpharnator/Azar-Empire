@@ -2,7 +2,7 @@
 <root>
     <faction name="AzarEmpire" 
     display_name="Azaran Empire Invasion" short_name="Azaran Empire" processing_group="AzarEmpire"
-    base_info_source="AzarEmpireFactionBaseInfo" deep_info_source="AzarEmpireFactionDeepInfo" team_center_color="c614051" team_border_color="c964B00"
+    base_info_source="AzarEmpireFactionBaseInfo" deep_info_source="AzarEmpireFactionDeepInfo" team_center_color="cFFBF00" team_border_color="cF7E7CE"
     type="SpecialFaction"
     description="The galaxy is being invaded by the Azaran Empire. They are a highly centralized empire bringing their own planet into the galaxy from which they will produce ships to take over planets and build structures to bolster their production.
 
